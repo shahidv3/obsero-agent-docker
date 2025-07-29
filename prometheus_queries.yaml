@@ -1,0 +1,5 @@
+queries:
+  - name: node_cpu_usage
+    expr: avg(rate(container_cpu_usage_seconds_total[1m])) * 100
+  - name: memory_usage
+    expr: sum(container_memory_usage_bytes) / sum(machine_memory_bytes) * 100
